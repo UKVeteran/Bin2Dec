@@ -1,0 +1,9 @@
+mixin octet  
+  .octet
+    - for (var x = 0; x < 8; x++)  
+      input(type="checkbox" class="bit bit" + (7 - x))
+    .decimals
+
+.title Binary to Decimals
+.subtitle Using CSS only
++octet

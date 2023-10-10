@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Pacifico');
+
+$pow2: 1, 2, 4, 8, 16, 32, 64, 128;
+
+@function pow2($number) {
+  @return nth($pow2, $number + 1);
+}
+
+@mixin bits($pos: 0, $acc: 0) {
+  @if $pos >=0 {
+    $checked: ".bit#{$pos}:checked";
+    $unchecked: ".bit#{$pos}:not(:checked)";
+    $value: $acc + pow2($pos);
+    #{$checked} + {
+      @include bits($pos - 1, $value);
+    } 
+    #{$unchecked} + {
+      @include bits($pos - 1, $acc);
+    } 
+  } @else {
+    .decimals:after {
+      content: '#{$acc}';
+    }
+  }
+}
+
+@include bits(7);
+
+body {
+  text-align: center;
+  color: #677077;
+}
+
+.decimals {
+  display: block;
+}
+
+.octet {
+  display: inline-block;
+  font-family: Montserrat;
+  font-size: 20px;
+}
+
+.decimals {
+  margin-top: 30px;
+  font-size: 50px;
+}
+
+.bit {
+  appearance: none;
+  outline: none;
+  color: #677077;  
+  &:after {
+    cursor: pointer;
+    display: block;
+    content: '0';
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: 2px solid #677077;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 36px;    
+  }
+  &:checked:after {
+    content: '1';
+  }
+}
+
+.title {
+  font-family: Pacifico;
+  font-size: 50px;
+  color: darken(#B5B5B7, 45%);
+}
+
+.subtitle {
+  font-family: Montserrat;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
