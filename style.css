@@ -1,0 +1,113 @@
+body {
+  background: #c6c6c6;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 18px;
+  color: #313131;
+}
+
+.container {
+  width: 500px;
+  background: #fff;
+  margin: 20px auto;
+  padding: 40px;
+  box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.25);
+}
+
+.heading {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.heading_main {
+  font-size: 26px;
+  padding-bottom: 10px;
+  border-bottom: 5px solid #dedede;
+}
+
+.heading_sub {
+  font-size: 18px;
+  color:   #777777;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.binary-number, .decimal-number {
+  font-family: "Lucida Console", Monaco, monospace;
+  height: 50px;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 15px;
+  border: 3px solid #dedede;
+  border-radius: 50px;
+}
+
+.binary-number:focus {
+  border: 3px solid #2ecc71;
+}
+
+.decimal-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  background: #2ecc71;
+  color:  #f5f5f5;
+  height: 50px;
+  font-size: 22px;
+  text-transform: uppercase;
+  border: 3px solid #2ecc71;
+  border-radius: 50px;
+}
+
+.button:hover {
+  background: #cc2e89;
+  border: 3px solid #cc2e89;
+}
+
+.error-message {
+  color: #cc2e3a;
+  text-align: center;
+  display: none;
+}
+
+.error-message_display_block {
+  display: block;
+}
+
+.footer {
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer__wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.footer__link {
+  color: #333333;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 5px 15px;
+}
+
+.footer__link:hover {
+  background: #cc2e89;
+  color:  #f5f5f5;
+  border-radius: 50px;
+}
